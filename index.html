@@ -7,6 +7,85 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 :root{--ink:#181818;--muted:#6b7280;--paper:#f6f6f3;--card:#fff;--line:#e5e7eb;--gold:#f5c400;--dark:#171717;--red:#b42318;--green:#18794e}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}header{background:var(--dark);color:white;padding:18px max(18px,calc((100% - 1160px)/2));display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:4px solid var(--gold)}.brand{font-size:25px;letter-spacing:.5px;font-weight:950}.brand span{color:var(--gold)}.subbrand{font-size:12px;color:#d1d5db}.tagline{font-weight:900;color:var(--gold);letter-spacing:1px}.nav{display:flex;gap:7px;flex-wrap:wrap}.nav button{border:1px solid #444;background:#252525;color:white;border-radius:10px;padding:9px 12px;cursor:pointer;font-weight:750}.nav button.active{background:var(--gold);border-color:var(--gold);color:#111}main{max-width:1160px;margin:25px auto;padding:0 16px 48px}.hero{background:linear-gradient(115deg,#202020,#3d3d3d);color:#fff;border-radius:20px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:18px;overflow:hidden}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1;margin:0 0 12px}.hero h1 span{color:var(--gold)}.hero p{max-width:590px;color:#e5e7eb;margin:0}.hero-icon{font-size:76px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin:28px 0 14px}.section-head h2{margin:0;font-size:22px}.muted{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.panel,.bike{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 5px 20px #11100008}.bike-top{display:flex;justify-content:space-between;gap:12px}.bike h3{font-size:20px;margin:0 0 4px}.pill{background:#fff4b8;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:900;white-space:nowrap}.dot{display:inline-block;width:12px;height:12px;border-radius:50%;border:1px solid #888;margin-right:6px;vertical-align:middle}.bike p{color:var(--muted)}.bike-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:14px}.rate strong{font-size:22px}.layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.9fr);gap:16px}label{display:block;font-size:12px;font-weight:850;margin:12px 0 5px;color:#454545}input,select,textarea{width:100%;border:1px solid #d1d5db;border-radius:9px;padding:11px 12px;background:#fff;color:#171717;font:inherit}input:focus,select:focus,textarea:focus{outline:2px solid #f5d94c;border-color:#b99a00}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.full{grid-column:1/-1}button,.btn{border:0;border-radius:10px;padding:10px 14px;font:inherit;font-weight:800;cursor:pointer}.primary{background:var(--gold);color:#111}.darkbtn{background:#202020;color:#fff}.secondary{background:#ececec;color:#222}.danger{background:#fee4e2;color:#912018}.small{padding:7px 10px;font-size:12px}.notice{background:#f7f7f1;border:1px solid #e8e4cc;padding:11px 12px;border-radius:10px;font-size:12px;color:#555;margin:12px 0}.notice.error{background:#fff0ef;border-color:#ffc9c4;color:#912018}.notice.good{background:#ecfdf3;border-color:#abefc6;color:#166534}.hidden{display:none!important}.calendar-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.month-title{font-weight:900}.week,.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.week div{text-align:center;color:var(--muted);font-size:10px;font-weight:850;padding:5px 0}.day{min-height:60px;border:1px solid var(--line);border-radius:8px;background:white;padding:5px 2px;display:flex;flex-direction:column;align-items:center;gap:3px}.day.selected{outline:2px solid #b99a00;background:#fff9cf}.day.busy{background:#fff0ef;border-color:#ffc9c4}.day:disabled{opacity:.35}.day small{font-size:8px;color:#666}.legend{font-size:11px;color:var(--muted);display:flex;gap:14px;margin-top:10px}.legend b{color:#b42318}.status{display:inline-block;font-size:11px;font-weight:900;border-radius:999px;background:#fff2d9;color:#7a4d00;padding:3px 8px}.status.approved{background:#dcfae6;color:#17663b}.status.rejected{background:#fee4e2;color:#912018}.booking{border-bottom:1px solid var(--line);padding:14px 0}.booking:last-child{border:0}.booking strong{display:block}.admin-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.price-box{background:#171717;color:white;padding:15px;border-radius:12px;margin:12px 0}.price-box strong{color:var(--gold);font-size:24px}.signature-pad{border:1px dashed #9ca3af;border-radius:10px;background:#fff;width:100%;height:150px;touch-action:none}.checkrow{display:flex;align-items:flex-start;gap:8px;font-size:12px;margin:13px 0}.checkrow input{width:auto;margin-top:4px}.footer{text-align:center;font-size:12px;color:#777;margin-top:28px}.authbox{max-width:550px;margin:25px auto}.auth-tabs{display:flex;gap:8px}.auth-tabs button{flex:1}.smallprint{font-size:11px;color:#6b7280}.owner-only{border-left:4px solid var(--gold)}@media(max-width:760px){.layout,.grid{grid-template-columns:1fr}.hero-icon{font-size:48px}.hero{padding:23px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.day{min-height:52px}.panel,.bike{padding:15px}}
+
+/* Mobile-first usability improvements */
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-width:320px;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+button,.btn,input,select,textarea{touch-action:manipulation}
+button,.btn{min-height:42px}
+input,select,textarea{min-height:44px;font-size:16px;max-width:100%}
+input[type=file]{padding:9px;font-size:14px}
+header{position:relative;z-index:5}
+.nav{align-items:center}
+.nav button:focus-visible,button:focus-visible,.btn:focus-visible{outline:3px solid #f5d94c;outline-offset:2px}
+.panel,.bike,.hero{min-width:0}
+.hero>div:first-child{min-width:0}
+.hero p,.muted,.smallprint,.notice{overflow-wrap:anywhere}
+.days{grid-auto-rows:minmax(44px,auto)}
+.day{min-width:0;min-height:54px;cursor:pointer}
+.day:focus-visible{outline:3px solid #b99a00;outline-offset:1px}
+.legend{flex-wrap:wrap}
+.admin-actions button{flex:0 1 auto}
+.booking{overflow-wrap:anywhere}
+.signature-pad{display:block;max-width:100%;height:170px}
+@media(max-width:760px){
+  header{padding:12px 14px;gap:10px;align-items:flex-start}
+  header>div{width:100%}
+  .brand{font-size:23px;line-height:1.15}
+  .subbrand{font-size:11px}
+  .nav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .nav button{width:100%;min-height:44px;padding:10px 8px;font-size:13px;white-space:normal}
+  main{margin:14px auto;padding:0 12px calc(28px + env(safe-area-inset-bottom))}
+  .hero{border-radius:16px;padding:20px 17px;gap:10px;align-items:flex-start}
+  .hero h1{font-size:clamp(30px,8vw,42px);line-height:1.05;overflow-wrap:anywhere}
+  .hero p{font-size:14px}
+  .hero-icon{font-size:38px;flex:0 0 auto;align-self:center}
+  .section-head{margin:22px 0 11px;align-items:flex-start}
+  .section-head h2{font-size:20px}
+  .grid,.layout{grid-template-columns:minmax(0,1fr);gap:12px}
+  .panel,.bike{padding:15px;border-radius:14px}
+  .bike h3{font-size:18px}
+  .bike-foot{align-items:flex-start;flex-direction:column}
+  .bike-foot button,.bike-foot .btn{width:100%}
+  .authbox{width:100%;max-width:550px;margin:16px auto}
+  .auth-tabs{gap:7px}
+  .auth-tabs button{padding:10px 7px;font-size:14px}
+  .form-grid{grid-template-columns:minmax(0,1fr);gap:0}
+  .full{grid-column:auto}
+  label{font-size:13px;margin-top:13px}
+  input,select,textarea{padding:12px;font-size:16px}
+  form button[type=submit],.panel form>button[type=submit]{width:100%;min-height:46px}
+  .calendar-head{gap:8px}
+  .calendar-head button{min-width:44px;min-height:44px}
+  .month-title{text-align:center;font-size:14px;flex:1}
+  .week,.days{gap:3px}
+  .week div{font-size:10px;padding:4px 0}
+  .day{min-height:44px;padding:4px 1px;border-radius:7px;gap:2px;font-size:12px}
+  .day small{font-size:8px;line-height:1.1;overflow-wrap:anywhere}
+  .legend{gap:8px;font-size:10px}
+  .price-box{padding:14px}
+  .price-box strong{font-size:25px}
+  .checkrow{font-size:13px;line-height:1.4}
+  .checkrow input{width:20px;height:20px;flex:0 0 20px}
+  .admin-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .admin-actions button{width:100%;min-height:42px;padding:9px 7px;font-size:12px}
+  .footer{padding:0 8px;font-size:11px}
+  .notice{font-size:12px}
+}
+@media(max-width:390px){
+  .brand{font-size:21px}
+  .subbrand{font-size:10px}
+  .nav button{font-size:12px}
+  .hero{padding:17px 14px}
+  .hero h1{font-size:29px}
+  .hero-icon{font-size:30px}
+  .panel,.bike{padding:12px}
+  .day{min-height:39px;font-size:11px}
+  .day small{font-size:7px}
+  .week div{font-size:9px}
+}
+@media(hover:none){button:hover,.btn:hover{filter:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style></head>
 <body>
 <header><div><div class="brand">LIGAO <span>RENTA</span></div><div class="subbrand">by Charlemaigne Motorcycle Rental · <span class="tagline">ARKILA NA!</span></div></div><nav class="nav"><button data-view="home" id="bookNavBtn" class="hidden">Book a Ride</button><button class="active" data-view="account">User Login / Register</button><button data-view="adminLogin">Admin Login</button><button id="signOutBtn" class="hidden">Sign out</button></nav></header>
